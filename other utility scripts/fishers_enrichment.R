@@ -1,8 +1,8 @@
 ## fishers test
-x=table(modgenes_df[which(rownames(modgenes_df)%in%geneSets[[i]]),net])[mod]  ##overlap bt m1 genes and GWAS genes
-m=table(modgenes_df[,net])[mod] ##m1 genes
-k2=length(which(unique(geneSets[[i]])%in%genes)) ##GWAS genes
-n=length(genes)-m #universe minus m1 genes
+m=length(query.genes) ## set1 genes
+k2=length(compare.genes) ##set2 genes
+x=length(intersect(query.genes, compare.genes))  ##overlap bt set1 and set2
+n=length(genes)-m #universe minus set1 genes
 ##fisher exact test
 fshr.mtx <- c(x, k2-x, m-x, n-(k2-x))
 ft <-fisher.test(matrix(data=fshr.mtx, nrow=2), alternative="g")  ## default is 'two.sided', 'g'=enrichment, 'l'=depletion
