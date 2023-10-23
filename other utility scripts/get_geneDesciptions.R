@@ -7,4 +7,3 @@ out=getBM(attributes=c('hgnc_symbol', 'chromosome_name','start_position','end_po
           values = gene_ids,
           mart = human)
 
-write.xlsx(cmrg_towrite, rowNames=T, file="Z:/Projects/Project Management/Cytotoxicity/Data/TKI_UWGS/run1_to_15_combined_and_DOX/DOX/DE_results/Male_vs_Female_DMSO_resultsTable.xlsx")
